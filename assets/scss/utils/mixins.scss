@@ -1,0 +1,62 @@
+@mixin bg($image: none, $position: 0 0, $color: transparent){
+  @if $image != none {
+    background-image: url($image);
+  }
+  background-color: $color;
+  background-position: $position;
+  background-size: cover;
+}
+
+@mixin font(
+  $font-family: $font,
+  $size: $fz,
+  $weight: 400,
+  $ls: 0,
+  $color: $color-BPrimary
+){
+  font-size: $size + px;
+  font-weight: $weight;
+  font-family: $font-family;
+  color: $color;
+  letter-spacing: $ls + px;
+}
+
+@mixin absolute(){
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin ratio($percent: '100%', $w: 400, $h: 250) {
+  padding-bottom: calc(#{$percent} * (#{$h} / #{$w}));
+}
+
+@mixin resp($prop, $d, $t: none, $m: none) {
+  @if $d != none{
+    #{$prop}: values($d);
+  }
+
+  @if $t != none {
+    @media (max-width: $tablet) {
+      #{$prop}: values($t);
+    }
+  }
+
+  @if $m != none {
+    @media (max-width: $mobile) {
+      #{$prop}: values($m);
+    }
+  }
+}
+
+@mixin media($device){
+  @if $device == tablet {
+    @media (max-width: $tablet) { @content }
+  }
+
+  @if $device == mobile {
+    @media (max-width: $mobile) { @content }
+  }
+}

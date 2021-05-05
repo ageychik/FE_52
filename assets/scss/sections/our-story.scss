@@ -1,0 +1,80 @@
+.our-story{
+  h3{
+    text-align: center;
+    @include resp($mb, 50, 30, 25);
+  }
+  .our-story-main{
+    display: flex;
+    align-items: flex-end;
+  }
+  .description{
+    @include resp(padding-right, 70, 0);
+    @include resp($mb, none, none, 20);
+    width: 50%;
+    flex: 1;
+    .title{
+      @include font($font, 20, 700, 0.17);
+      margin-bottom: 30px;
+      line-height: 1.35;
+      span{
+        color: $color-link;
+      }
+    }
+  }
+  .our-story-pictures{
+    @include resp(padding-left, 10, 10, 0);
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    .picture{
+      @include resp($mb, none, 10, 15);
+      padding-bottom: calc((33.3% - 10px) * (224 / 140));
+      width: calc(33.3% - 10px);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      &._plan{
+        background-image: url('../img/our-story_1.jpg');
+      }
+      &._manage{
+        background-image: url('../img/our-story_2.jpg');
+      }
+      &._build{
+        background-image: url('../img/our-story_3.jpg');
+      }
+      .text{
+        @include font($font, 24, 800, 0.19, $color-white);
+        @include absolute();
+        padding: 15px;
+        line-height: 1.2;
+      }
+    }
+  }
+  @include media(tablet){
+    .our-story-pictures{
+      flex-direction: column;
+      width: auto;
+      .picture{
+        width: 100%;
+        padding-bottom: 0;
+        .text{
+          position: static;
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include media(mobile){
+    .our-story-main{
+      flex-direction: column;
+    }
+    .description{
+      width: 100%;
+    }
+    .our-story-pictures{
+      width: 100%;
+    }
+  }
+}

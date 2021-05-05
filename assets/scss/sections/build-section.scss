@@ -1,0 +1,13 @@
+.build-section{
+  @include resp(padding, (175, 0, 230), (150, 0), (60, 0));
+  @include bg('../img/build-bg.png', center);
+  text-align: center;
+  .container{
+    max-width: 360px;
+  }
+  .build-title{
+    @include font($font, 30, 700, 0.16);
+    line-height: 1.2;
+    margin-bottom: 35px;
+  }
+}

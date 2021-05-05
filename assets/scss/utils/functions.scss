@@ -1,0 +1,9 @@
+@function values($sizes){
+  $str: '';
+
+  @each $size in $sizes {
+    $str: #{ $str + $size + 'px '}
+  }
+
+  @return $str;
+}

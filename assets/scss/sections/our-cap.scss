@@ -1,0 +1,42 @@
+.our-cap{
+  .head{
+    display: flex;
+    @include resp(margin-bottom, 70, 50, 20);
+
+    h3{
+      width: 33.3%;
+      @include resp($mb, none, none, 15);
+      &:after{
+        margin: 10px 0 0;
+      }
+    }
+    .services-btn-block{
+      flex: 1;
+      display: inline-flex;
+      p{
+        @include resp(padding-right, 30, none, 0);
+        @include resp($mb, none, none, 15);
+        @include font($font, 11, 600, 0.02);
+        line-height: 1.7;
+        flex: 1;
+      }
+    }
+  }
+
+  .our-cap-main{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media(mobile){
+    .head{
+      flex-direction: column;
+    }
+    .services-btn-block{
+      flex-direction: column;
+    }
+    .our-cap-main{
+      flex-direction: column;
+    }
+  }
+}

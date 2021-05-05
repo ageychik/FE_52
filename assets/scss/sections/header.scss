@@ -1,0 +1,31 @@
+.hero-header{
+  min-height: 100vh;
+  @include bg('../img/bg.jpg', center);
+  display: flex;
+  .container{
+    height: 100%;
+  }
+  .header-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 40px 0 70px;
+    text-align: center;
+    color: $color-white;
+  }
+  .title{
+    .subtitle{
+      @include font($font, 16, 600, 0, $color-white);
+    }
+  }
+  .read-more{
+    @include font($font, 11, 600, 3.7, $color-white);
+    text-shadow: 0 4px 4px rgba($color-black, 0.25), 0 4px 4px rgba($color-black, 0.25);
+    transition: all .25s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}

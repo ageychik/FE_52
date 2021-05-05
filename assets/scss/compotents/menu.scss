@@ -1,0 +1,26 @@
+nav{
+  border-bottom: 1px solid $color-border;
+  .navigation-main{
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul{
+    display: flex;
+    margin: 0 -20px;
+    li{
+      padding: 0 20px;
+      a{
+        @include font($font, 12, 600);
+        transition: all .25s;
+        &:hover{
+          color: $color-link;
+        }
+      }
+    }
+  }
+  @include media(tablet){
+    display: none;
+  }
+}

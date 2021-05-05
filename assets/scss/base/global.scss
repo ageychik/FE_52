@@ -1,0 +1,100 @@
+* {
+  outline: none;
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  --r-globalnav-height: 44px;
+  --r-globalnav-segmentbar-height: 0;
+  --r-globalnav-viewport-large-min-width: 1024px;
+  --r-globalnav-viewport-large-max-width: 1441px;
+  --r-globalnav-viewport-large-query: (min-width: 1024px);
+  --r-globalnav-viewport-medium-min-width: 768px;
+  --r-globalnav-viewport-medium-max-width: 1023px;
+  --r-globalnav-viewport-medium-query: (max-width: 1023px);
+  --r-globalnav-viewport-small-min-width: 420px;
+  --r-globalnav-viewport-small-max-width: 767px;
+  --r-globalnav-viewport-small-query: (max-width: 767px);
+  --r-globalnav-viewport-xsmall-min-width: 320px;
+  --r-globalnav-viewport-xsmall-max-width: 419px;
+  --r-globalnav-viewport-xsmall-query: (max-width: 419px);
+  --global-nav-main-height: 0px;
+  --global-nav-segmentbar-height: 0px;
+  --global-nav-localeswitcher-height: 0px;
+  --global-nav-collective-height: 0px;
+}
+
+main{
+
+  height: 100vh;
+  position: relative;
+  &:before{
+    content: '';
+    background: linear-gradient(180deg, rgba($color-white, 0.0001) 0%, $color-white 93.29%);
+    @include absolute();
+  }
+}
+
+h1 {
+  @include font($font-second, 60, normal, 0, $color-white);
+}
+
+h2 {
+
+}
+h3 {
+  @include font($font, 18, 700, 2.31);
+  text-transform: uppercase;
+  &:after{
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: $color-link;
+    display: block;
+    margin: 10px auto 0;
+  }
+}
+h4 {
+  @include font($font, 16, 700, 0.43);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+p{
+  @include font($font, 13, 400, 0.19);
+  line-height: 1.76;
+}
+
+a{
+  text-decoration: none;
+}
+nav{
+  overflow: hidden;
+}
+
+img, svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+section{
+  @include resp(padding, (60, 0), (40, 0), (20, 0))
+}
+.container {
+  max-width: 940px;
+  padding: 0 15px;
+  box-sizing: content-box;
+  margin: auto;
+  @include media(tablet){
+    padding: 0 25px;
+  }
+  @include media(mobile){
+    padding: 0 15px;
+  }
+}
+
